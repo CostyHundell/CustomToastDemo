@@ -14,14 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toast = Toast(this)
-        toast.view = LayoutInflater.from(this).inflate(R.layout.custom_toast_layout, null)
-        val toastTextView = toast.view.findViewById<TextView>(R.id.toast_text)
-        toastTextView.text = "Show Toast Clicked"
-        toast.duration = Toast.LENGTH_LONG
-
         toast_button.setOnClickListener {
-           toast.show()
+           CustomToast(this).show()
         }
     }
 }
