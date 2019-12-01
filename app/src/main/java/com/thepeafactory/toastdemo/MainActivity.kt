@@ -1,12 +1,8 @@
 package com.thepeafactory.toastdemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.custom_toast_layout.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,8 +10,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toast_button.setOnClickListener {
-           CustomToast(this).show()
+        val customToast = CustomToast(this)
+
+        toast_button_1.setOnClickListener {
+            customToast
+                .setText("Set New Custom Text 1")
+                .show()
+        }
+
+        toast_button_2.setOnClickListener {
+            customToast
+                .setText("Set New Custom Text 2")
+                .show()
         }
     }
 }
